@@ -28,7 +28,7 @@ From the above characteristic table, we can directly write the next state equati
 
 **Procedure**
 
-``
+```
 Developed by : NIKSHITHA S
 Reg no : 24900161
 ```
