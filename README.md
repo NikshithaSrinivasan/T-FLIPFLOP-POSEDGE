@@ -28,55 +28,40 @@ From the above characteristic table, we can directly write the next state equati
 
 **Procedure**
 
-```
-Developed by : NIKSHITHA S
-Reg no : 24900161
-```
-```
-1.Define Module: Define a Verilog module for the T flip-flop with inputs (T, CLK) and outputs (Q, Q_bar).
-
-2.Declare Inputs and Outputs: Declare input and output ports for the module.
-
-3.Implement Flip-Flop Logic: Write Verilog code to implement the T flip-flop logic based on its functional table.
-Use a synchronous always @(posedge CLK) block to trigger the flip-flop on the positive edge of the clock signal.
-
-4.Simulate Using Testbench: Write a Verilog testbench to simulate the behavior of the T flip-flop under different input conditions.
-
-5.Apply Input Stimuli: In the testbench, apply various combinations of input stimuli (T, CLK) to cover all possible input states.
-```
+/* write all the steps invloved */
 
 **PROGRAM**
 
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
 ```
-module Tflipflop( input clk, rst_n, input t,
-output reg q,
-output q_bar
-);
-always@(posedge clk) 
+Developed by:NIKSHITHA S
+RegisterNumber:212224040220
+```
+*/ 
+```
+module exp_9(T,clk,Q,Qbar); 
+input T,clk; 
+output reg Q;
+output reg Qbar; 
+initial Q=0; 
+initial Qbar=1; 
+always @(posedge clk) 
 begin 
-if(!rst_n)
-q<=0;
-else
-if(t)
-q<=~q;
-else
-q<=q;
-end
-assign q_bar = ~q;
+Q=(T&(~Q))|((~T)&Q); 
+Qbar=~Q; 
+end 
 endmodule
 ```
 
 **RTL LOGIC FOR FLIPFLOPS**
 
-![image](https://github.com/user-attachments/assets/e2df2faf-277b-41b5-8e55-2065501f7acf)
+![435460662-91972429-24b9-46f3-af6c-446c5ff4f6f4](https://github.com/user-attachments/assets/7afa8f64-273c-419c-80a1-3a99e69f502a)
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
-![image](https://github.com/user-attachments/assets/875ca012-4dd1-4be7-86c6-2e7cb8834d90)
-
-
+![435460673-a315d54c-082c-434f-be6c-c37200175653](https://github.com/user-attachments/assets/c29176a0-f1d3-4886-b47f-e7f6c7529d22)
 
 **RESULTS**
 
-Thus,the T Flip-Flop is designed and its functionality is validated using the truth table and timing diagrams.
+Thus the Flip flop designed and the truth tables is verified using Quartus software.
